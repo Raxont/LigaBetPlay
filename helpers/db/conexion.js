@@ -9,25 +9,17 @@ export class connect{
     #dbName;
 
    static instance
-   constructor({host: h, user: u, pass: w, port: p, cluster: c, dbName: d}=
-   {
-       user:"mongo",
-       port: 47797,
-       pass: "PNSmQbwecKrbuFTCqXmYoaqicgEZpFeF",
-       host: "mongodb://",
-       cluster: "monorail.proxy.rlwy.net",
-       dbName: "test"
-   })
+   constructor()
    {
        if(typeof connect.instance === "object"){
            return connect.instance;
        }
-       this.user = u;
-       this.port = p;
-       this.#pass = w;
-       this.#host = h;
-       this.#cluster = c;
-       this.#dbName = d;
+       this.user = process.env.MONGO_USER;
+       this.port = process.env.MONGO_PORT;
+       this.#pass = process.env.MONGO_PWD;
+       this.#host = process.env.MONGO_HOST;
+       this.#cluster = process.env.MONGO_CLUSTER;
+       this.#dbName = process.env.MONGO_DB;
        this.#open();
        this.db = this.conexion.db(this.getDbName)
        connect.instance = this;

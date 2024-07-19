@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node --watch main.js -p",
+    "dev": "node --watch --env-file=.env main.js -p",
     "styles": "npx prettier --write src/**/*.js"
   },
   "keywords": [],
