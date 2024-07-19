@@ -1,0 +1,17 @@
+{
+  "name": "ligabetplay",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch main.js -p",
+    "styles": "npx prettier --write src/**/*.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^6.8.0",
+    "node": "^22.5.0"
+  }
+}
