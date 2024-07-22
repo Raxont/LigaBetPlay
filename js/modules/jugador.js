@@ -1,4 +1,4 @@
-import { connect } from "../../helpers/db/conexion";
+import { connect } from "../../helpers/db/conexion.js";
 
 export async function obtenerJugadores() {
   const dbConnection = new connect();
