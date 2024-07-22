@@ -7,6 +7,7 @@ export class connect{
     #host;
     #cluster;
     #dbName;
+    permissions;
 
    static instance
    constructor()
@@ -20,6 +21,7 @@ export class connect{
        this.#host = process.env.MONGO_HOST;
        this.#cluster = process.env.MONGO_CLUSTER;
        this.#dbName = process.env.MONGO_DB;
+       this.permissions = (process.env.USER_PERMISSIONS || "").split(",");
        this.#open();
        this.db = this.conexion.db(this.getDbName)
        connect.instance = this;
